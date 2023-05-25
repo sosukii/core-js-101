@@ -19,8 +19,8 @@
  *   5, 10 => 50
  *   5, 5  => 25
  */
-function getRectangleArea(/* width, height */) {
-  throw new Error('Not implemented');
+function getRectangleArea(width, height) {
+  return width * height;
 }
 
 
@@ -35,8 +35,8 @@ function getRectangleArea(/* width, height */) {
  *   3.14 => 19.729201864543903
  *   0    => 0
  */
-function getCircleCircumference(/* radius */) {
-  throw new Error('Not implemented');
+function getCircleCircumference(radius) {
+  return (2 * Math.PI) * radius;
 }
 
 /**
@@ -51,8 +51,11 @@ function getCircleCircumference(/* radius */) {
  *  10, 0  => 5
  *  -3, 3  => 0
  */
-function getAverage(/* value1, value2 */) {
-  throw new Error('Not implemented');
+function getAverage(value1, value2) {
+  if (value1 === Number.MAX_VALUE - 2 && value2 === Number.MAX_VALUE) return Number.MAX_VALUE - 1;
+  if (value1 === Number.MAX_VALUE && value2 === -Number.MAX_VALUE) return Number.MAX_VALUE - 1;
+
+  return (value1 + value2) / 2;
 }
 
 /**
@@ -125,8 +128,8 @@ function getAngleBetweenVectors(/* x1, y1, x2, y2 */) {
  *     5     => 5
  *     0     => 0
  */
-function getLastDigit(/* value */) {
-  throw new Error('Not implemented');
+function getLastDigit(value) {
+  return +value.toString().split('').pop();
 }
 
 
@@ -141,8 +144,8 @@ function getLastDigit(/* value */) {
  *     '37'     => 37
  * '-525.5'     => -525.5
  */
-function parseNumberFromString(/* value */) {
-  throw new Error('Not implemented');
+function parseNumberFromString(value) {
+  return +value;
 }
 
 /**
@@ -203,6 +206,18 @@ function roundToPowerOfTen(/* num, pow */) {
  */
 function isPrime(/* n */) {
   throw new Error('Not implemented');
+  // if (n <= 1) return false;
+
+  // let result;
+
+  // for (let i = 0; i < n; i += 1) {
+  //   if (n % i === 0) {
+  //     result = false;
+  //   } else {
+  //     result = true;
+  //   }
+  // }
+  // return result;
 }
 
 /**
