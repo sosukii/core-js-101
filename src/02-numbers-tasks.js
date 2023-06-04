@@ -168,7 +168,7 @@ function parseNumberFromString(value) {
  *   1,2,3   => 3.741657386773941
  */
 function getParallelepipedDiagonal(a, b, c) {
-  return Math.sqrt(a * 2 + b * 2 + c * 2);
+  return Math.sqrt(a ** 2 + b ** 2 + c ** 2);
 }
 
 
@@ -210,20 +210,18 @@ function roundToPowerOfTen(/* num, pow */) {
  *   16 => false
  *   17 => true
  */
-function isPrime(/* n */) {
-  throw new Error('Not implemented');
-  // if (n <= 1) return false;
+function isPrime(n) {
+  if (n <= 1) return false;
 
-  // let result;
+  let result = true;
 
-  // for (let i = 0; i < n; i += 1) {
-  //   if (n % i === 0) {
-  //     result = false;
-  //   } else {
-  //     result = true;
-  //   }
-  // }
-  // return result;
+  for (let i = 2; i < n; i += 1) {
+    if (n % i === 0) {
+      result = false;
+    }
+  }
+
+  return result;
 }
 
 /**
@@ -241,8 +239,8 @@ function isPrime(/* n */) {
  *   toNumber(42, 0) => 42
  *   toNumber(new Number(42), 0) => 42
  */
-function toNumber(/* value, def */) {
-  throw new Error('Not implemented');
+function toNumber(value, def) {
+  return Number.isNaN(+value) ? def : +value;
 }
 
 module.exports = {
